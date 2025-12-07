@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Playlist Transfer",
+    "version": "1.0.0",
+    "description": "Transfer playlists between music streaming services (Spotify & YouTube Music)",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "webRequest"
+    ],
+    "host_permissions": [
+        "https://api.spotify.com/*",
+        "https://accounts.spotify.com/*",
+        "https://www.spotify.com/*",
+        "https://music.youtube.com/*",
+        "https://www.youtube.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Playlist Transfer Service"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://music.youtube.com/*"],
+            "js": ["youtube-content.js"]
+        }
+    ]
+}

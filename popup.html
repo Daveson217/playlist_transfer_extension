@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Transfer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Playlist Transfer</h1>
+        
+        <!-- Authentication Section -->
+        <div id="auth-section" class="section">
+            <h2>Authentication</h2>
+            <button id="spotify-auth-btn" class="btn btn-spotify">Login with Spotify</button>
+            <button id="youtube-auth-btn" class="btn btn-youtube">Login with YouTube</button>
+            <div id="auth-status" class="auth-status"></div>
+        </div>
+
+        <!-- Transfer Section -->
+        <div id="transfer-section" class="section hidden">
+            <h2>Transfer Playlist</h2>
+            
+            <!-- Source Selection -->
+            <div class="form-group">
+                <label for="source-service">From:</label>
+                <select id="source-service">
+                    <option value="">Select Source</option>
+                    <option value="spotify">Spotify</option>
+                </select>
+            </div>
+
+            <!-- Playlist Selection -->
+            <div class="form-group">
+                <label for="playlist-select">Select Playlist:</label>
+                <select id="playlist-select">
+                    <option value="">Loading playlists...</option>
+                </select>
+            </div>
+
+            <!-- Destination Selection -->
+            <div class="form-group">
+                <label for="destination-service">To:</label>
+                <select id="destination-service">
+                    <option value="">Select Destination</option>
+                    <option value="youtube-music">YouTube Music</option>
+                </select>
+            </div>
+
+            <!-- Transfer Button -->
+            <button id="transfer-btn" class="btn btn-primary">Transfer Playlist</button>
+        </div>
+
+        <!-- Progress Section -->
+        <div id="progress-section" class="section hidden">
+            <h2>Transfer Progress</h2>
+            <div id="progress-bar" class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <p id="progress-text">Starting transfer...</p>
+            <div id="songs-status">
+                <p>Matched: <span id="matched-count">0</span></p>
+                <p>Not Found: <span id="not-found-count">0</span></p>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" class="section hidden">
+            <h2>Transfer Complete</h2>
+            <p id="results-message"></p>
+            <button id="close-btn" class="btn btn-secondary">Close</button>
+        </div>
+
+        <!-- Storage Management -->
+        <div id="storage-section" class="section">
+            <h2>Saved Transfers</h2>
+            <div id="saved-transfers"></div>
+            <button id="clear-storage-btn" class="btn btn-danger">Clear All Data</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
