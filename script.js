@@ -4,7 +4,7 @@ async function fetchPlaylistsFromSource() {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '98d9f84dfcmshd22c180343663efp1009ebjsnfdfb04823673',
+            'x-rapidapi-key': '98d9f84dfcmshd22c180343663efp1009ebjsnfdfb04823673', // Revoked key
             'x-rapidapi-host': 'concerts-artists-events-tracker.p.rapidapi.com'
         }
     };
